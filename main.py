@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -106,6 +107,10 @@ def main():
 
             print(f"Prompt tokens: {prompt_tokens}")
             print(f"Response tokens: {candidate_tokens}")
+
+    
+    print("Agent reached maximum iterations without a final response")
+    sys.exit(1)
 
 
 
